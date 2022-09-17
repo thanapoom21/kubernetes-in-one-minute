@@ -11,19 +11,88 @@ Minikube was chosen to be the playground for this project. It is simple and has 
 
 There are other available options: k3s, Kind, Kubeadm, Rancher.
 
-`brew install minikube`
+```
+brew install minikube
+```
 
 then install the kubectl CLI because it reduces the amount of characters/commands you'll type.
 
-`brew install kubectl`
+```
+brew install kubectl
+```
 
-To start Minikube with a specific driver.
+To start Minikube with a hyperkit driver.
 
-`minikube start --driver=hyperkit`
+```
+minikube start --driver=hyperkit
+```
 
 To verify if it is correctly configured.
 
-`minikube status`
+```
+minikube status
+```
+
+To get node's ip address
+
+```
+minikube ip
+```
+
+To obtain basic information about k8s components withing the same namespace
+
+```
+kubectl get node
+kubectl get pod
+kubectl get service 
+kubectl get all 
+```
+
+To get everything at once.
+```
+kubectl get all -A
+```
+
+To get extra output info for a specific component. Add -o wide
+
+```
+kubectl get node -o wide
+```
+
+To examine detailed info for a component
+
+```
+kubectl describe pod <podname>
+kubectl describe endpoints <endpoint>
+```
+
+To get logs for a specific component
+
+```
+kubectl logs <podname>
+```
+
+To stop the cluster if you need resources for something else.
+
+```
+minikube stop
+```
+
+Finally, remove the cluster when not in use.
+
+```
+minikube delete profile 
+```
+
+For whatever reasons you might get stuck.
+
+```
+minikube <command> --help
+
+or 
+
+minikube scream -o loud
+```
 
 ### DockerHub images
 
@@ -55,3 +124,10 @@ You have to change values in angle brackets according to your info.
 ### Web/App setup
 
 You can use any website or app to try and see if there's a bug. I use my side project that I built a while ago with NextJS. It seems to work really well. 
+
+## Useful Links
+
+- [MongoDB Image](https://hub.docker.com/_/mongo)
+- [Kubernetes](https://kubernetes.io/docs/home/)
+- [Minikube](https://minikube.sigs.k8s.io/docs/start/)
+- [NextJS](https://nextjs.org/docs/getting-started)
