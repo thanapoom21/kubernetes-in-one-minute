@@ -5,7 +5,7 @@ metadata:
   labels:
     app: todoapp
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: todoapp
@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: todoapp
-        image: musics21/todoornottodo:latest
+        image: musics21/todoornottodo:v1.0.5
         resources:
           requests:
             memory: "64Mi"
