@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: todoapp
-        image: musics21/todoornottodo:v1.0.5
+        image: musics21/todoornottodo:v1.0.8
         resources:
           requests:
             memory: "64Mi"
