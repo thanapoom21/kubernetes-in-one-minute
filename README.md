@@ -72,6 +72,16 @@ To get logs for a specific component
 kubectl logs <podname>
 ```
 
+> Minikube IP is not accessible when running a dashbord.
+
+If you cannot access the NodePort service app, try this command:
+
+```
+minikube service <name-of-the-app-you-want-expose>
+```
+
+This command will launch a proxy tunnel and provide a unique URL endpoint.
+
 To stop the cluster if you need resources for something else.
 
 ```
@@ -131,3 +141,4 @@ You can use any website or app to try and see if there's a bug. I use my side pr
 - [Kubernetes](https://kubernetes.io/docs/home/)
 - [Minikube](https://minikube.sigs.k8s.io/docs/start/)
 - [NextJS](https://nextjs.org/docs/getting-started)
+- [K8s-in-1-hour by Nana](https://gitlab.com/nanuchi/k8s-in-1-hour)
