@@ -135,6 +135,10 @@ You have to change values in angle brackets according to your info.
 
 You can use any website or app to try and see if there's a bug. I use my side project that I built a while ago with NextJS. It seems to work really well. 
 
+There is an issue I found when running musics21/todoornottodo:v1.0.8 on a k8s cluster. CrashLoopBackOff warning and the container/pod won't run as expected. The culprit is the difference of OS architecture when the image was built. At first, I built the image with an intel chip linux/amd64 then run a pod with minikube on Mac M1 which is a linux/arm64. 
+
+What I did was to build the image - musics21/todoornottodo:v1.0.9 on arm64 architecture and voilà it works.
+
 ## Useful Links
 
 - [MongoDB Image](https://hub.docker.com/_/mongo)
